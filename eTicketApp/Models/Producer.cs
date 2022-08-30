@@ -6,5 +6,10 @@
         public string ProfilePictureUrl { get; set; }
         public string FullName { get; set; }
         public string Bio { get; set; }
+
+        //Relationships
+
+        //producer can have multiple movies
+        public List<Movie> Movies { get; set; }
     }
 }

@@ -9,5 +9,11 @@ namespace eTicketApp.Models
         public string Logo { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+
+        //Relationships
+        //One to Many
+        //Cinema can have many movies
+        public List<Movie> Movies { get; set; }
+
     }
 }
