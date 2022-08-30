@@ -1,11 +1,13 @@
 using eTicketApp.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-//DBContext configuration
-builder.Services.AddDbContext<AppDbContext>();
+
+//DBContext configuration -- translator -- which datastorage to translate
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
 
 
 
