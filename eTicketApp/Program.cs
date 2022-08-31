@@ -6,7 +6,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-//DBContext configuration -- translator -- which datastorage to translate
+//DBContext configuration -- translator -- parameter( datastorage to translate)
+//Data storage = DefaultConnectionString -- see json.settings
+//import SQLServer  -- 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
 
 

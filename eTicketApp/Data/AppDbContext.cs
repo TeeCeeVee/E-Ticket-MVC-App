@@ -3,8 +3,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace eTicketApp.Data
 {
+    // DbContext acts as a translator between the model classes and database
+    // using EntityFC
     public class AppDbContext:DbContext
     {
+        //constructor
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
 
