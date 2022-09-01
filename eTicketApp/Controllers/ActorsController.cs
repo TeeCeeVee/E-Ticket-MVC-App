@@ -22,7 +22,7 @@ namespace eTicketApp.Controllers
             
             var data = await _context.Actors.ToListAsync();
             //pass data to the View
-            return View();
+            return View(data);
         }
     }
 }
