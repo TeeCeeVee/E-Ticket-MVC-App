@@ -1,5 +1,6 @@
 ﻿using eTicketApp.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace eTicketApp.Controllers
 {
@@ -10,16 +11,16 @@ namespace eTicketApp.Controllers
         private readonly AppDbContext _context;
 
         //inject _context to the constructor
-        public ActorsController(AppDbContext actors_context)
+        public ActorsController(AppDbContext context)
         {
-            _context = actors_context;
+            _context = context;
         }
         
-       public IActionResult Index()
+       public async Task<IActionResult> Index()
         {
             //passing the actors as a list
             
-            var data = _context.Actors.ToList();
+            var data = await _context.Actors.ToListAsync();
             //pass data to the View
             return View();
         }
