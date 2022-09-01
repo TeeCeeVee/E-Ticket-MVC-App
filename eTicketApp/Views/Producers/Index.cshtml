@@ -1,11 +1,11 @@
 ﻿@*Define the model -- list of actors*@
 
-@model IEnumerable<Actor>
+@model IEnumerable<Producer>
 
 @*Define ViewData -- title of the page*@
 
 @{
-    ViewData["Title"] = "List of Actors";
+    ViewData["Title"] = "List of Producers";
 }
 
 <div class="row">
@@ -14,7 +14,7 @@
         <table class="table">
             <thead>
                 <tr class="text-center">
-                    <th>@Html.DisplayNameFor(model => model.ProfilePictureURl)</th>
+                    <th>@Html.DisplayNameFor(model => model.ProfilePictureUrl)</th>
                     <th>@Html.DisplayNameFor(model => model.FullName)</th>
                     <th>@Html.DisplayNameFor(model => model.Bio)</th>
                     <th>Actions</th>
@@ -26,7 +26,7 @@
                 {
                     <tr>
                         <td class="align-middle">
-                           <img class="rounded-circle" src="@item.ProfilePictureURl" alt="@item.FullName" style="max-width: 150px"/>
+                           <img class="rounded-circle" src="@item.ProfilePictureUrl" alt="@item.FullName" style="max-width: 150px"/>
                         </td>
                         <td class="align-middle">
                             @Html.DisplayFor(modelItem => item.FullName)
