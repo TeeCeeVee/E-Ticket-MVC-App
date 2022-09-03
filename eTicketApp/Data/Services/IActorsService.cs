@@ -6,14 +6,16 @@ namespace eTicketApp.Data.Services
     //interfaces are just contracts
     public interface IActorsService
     {
-        //get all actors from the database
+        //method signatures -- contracts
 
-        IEnumerable<Actor> GetAll();
-        Actor GetById(int id); // method to return a single actor
+        // use Task<> to implement async await in actors controller
+        Task<IEnumerable<Actor>>GetAll(); // method to get all actors from the database
+        Actor GetById(int id); // method to return a single actor to the user
 
         void Add(Actor actor); // add actor to the database - no return
 
-        Actor Update(int id, Actor newActor); //update actor
+        // int id checks if the id exists before update Actor
+        Actor Update(int id, Actor newActor); // method to return the updated actor to the user
 
         void Delete(int id); // delete actor
 
